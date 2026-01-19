@@ -24,8 +24,10 @@ This mirrors how investment teams underwrite deals, but is designed so key assum
 The underwriting assumptions are grounded in observed distributions rather than picked numbers: 
 - Rent growth (bear/base/bull) is calibrated using historical percentiles 
 
-Bear = 10th percentile 
+Bear = 10th percentile
+
 Base = 50th percentile (median) 
+
 Bull = 90th percentile 
 
 - Vacancy rate (bear/base/bull) inputs exists in excel, and the python workflow extends this into a simulated vacancy process for stress testing NOI 
@@ -91,7 +93,7 @@ By computing lower percentiles (5th and 10th), and probabilities, the model beco
 The excel sensitivity table shows where the model breaks under assumptions and monte carlo quantifies how likely those breakpoints are, given plausible distributions. 
 
 
-# Challanges Encountered 
+# Challenges Encountered 
 
 - Messy real world datasets: 
 
@@ -105,6 +107,6 @@ Rent growth data was recorded at month start, whil cash rate resampling produced
 
 A full natoinal vacancy time series was not publicly available and accesible in raw form. Rather than dropping the feature, a synthetic vacancy process was built to support stress testing and monte carlo simulation on NOI, while keeping the model transparent. 
 
-- Making excel and python "talk" to each other 
+- Making excel and python "talk" to each other: 
 
 Outputs were first exported into excel ready files so the financial model remains usable for stakeholders who avoid notebooks but still want probabilisitc insights produced by the python layer of the project. 
